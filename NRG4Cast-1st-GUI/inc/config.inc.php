@@ -11,7 +11,7 @@
 
 // mysql config -------------------------------------------------------
 $mysql_user = "nrg4cast";
-$mysql_pass = "electricity42";
+$mysql_pass = "pass";
 $mysql_host = "localhost";
 $mysql_dbase = "nrg4cast";
 
