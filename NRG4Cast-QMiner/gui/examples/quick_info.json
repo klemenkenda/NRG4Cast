@@ -1,0 +1,8 @@
+{
+    "stores":4,
+    "records": 552,
+    "store_with_max_records": {
+        "name": "visit",
+        "records": 513
+    }
+}

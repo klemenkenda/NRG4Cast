@@ -1,0 +1,1 @@
+c:\wamp\bin\php\php5.4.3\php.exe push-local.php

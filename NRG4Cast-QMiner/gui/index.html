@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <style type="text/css">
+            body { padding-top: 60px; padding-bottom: 40px; }
+        </style>
+        <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="css/qm.css" rel="stylesheet">
+
+        <link rel="shortcut icon" href="img/favicon.png">
+
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/knockout.js"></script>
+        <script type="text/javascript" src="js/qminer_gs.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#spanGcSuccess").hide();
+                $("#spanGcStatus").hide();
+                Qm.Main.ShowQuickInfo();
+            });
+        </script>
+        <title>QMiner Administration</title>
+    </head>
+    <body>
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="main.html">QMiner</a>
+                    <div class="nav-collapse collapse">
+                                                    <!--<p class="navbar-text pull-right"> Logged in as <a href="#" class="navbar-link">Username</a>
+                                                                                                                                                                                                                                                                                    </p>-->
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="stores.html">Stores</a></li>
+                            <li><a href="admin.html">Administer</a></li>
+                            <li><a href="search.html">Search data</a></li>
+                            <!--<li><a href="report.html">View reports</a></li>
+                            <li><a href="about.html">About</a></li>-->
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+
+                <div class="span2">
+                    <div id="divQuickStats" class="well sidebar-nav">
+                        <div class="nav-header">Quick statistics</div>
+                        <div>
+                            Stores: <span id="spanQiStores"></span>
+                        </div>
+                        <div>
+                            All records: <span id="spanQiRecords"></span>
+                        </div>
+                        <div class="nav-header">Most records</div>
+                        <div>
+                            Store: <span id="spanQiMaxRecStore"></span>
+                        </div>
+                        <div>
+                            Store: <span id="spanQiMaxRecStoreCnt"></span>
+                        </div>
+                    </div>
+                    <div id="divActions" class="well sidebar-nav">
+                        <div class="nav-header">Garbage collect</div>
+                        <div>
+                            <div id="spanGcStatus" class="alert alert-warning fade in" style="margin-top: 10px;">
+                                <i class="icon-cogs icon-large"></i> Working
+                            </div>
+                            <div id="spanGcSuccess" class="alert alert-success fade in" style="margin-top: 10px;">
+                                <i class="icon-ok icon-large"></i> Done
+                            </div>
+                            <a id="btnGc" class="btn btn-large" href="#" onclick="javascript:Qm.Main.GarbageCollect();">Execute</a>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="span10">
+                    <div class="hero-unit">
+                        <h1>QMiner</h1>
+                        <p>Store your web log data in search-optimized database and use its rich functionality with JSON.</p>
+                    </div>
+
+                    <div class="row-fluid">
+
+                        <div class="span4">
+                            <h2>Stores</h2>
+                            <p> This section displays a list of all stores that are defined in the current database. </p>
+                            <p><a class="btn btn-primary btn-large" href="stores.html">Open &raquo;</a></p>
+                        </div>
+                        <div class="span4">
+                            <h2>Administration</h2>
+                            <p> Open this page to administer stores and their settings or add new stores, indexes and joins. </p>
+                            <p><a class="btn btn-primary btn-large" href="admin.html">Open &raquo;</a></p>
+                        </div>
+
+                        <div class="span4">
+                            <h2>Search</h2>
+                            <p> Click here to open page where data can be browsed and searched. </p>
+                            <p><a class="btn btn-primary btn-large" href="search.html">Open &raquo;</a></p>
+                        </div>
+                                                      
+                        <!--<div class="span3">
+                            <h2>View</h2>
+                            <p> Browse through data reports that have been prepared in advance. </p>
+                            <p><a class="btn btn-primary btn-large" href="report.html">Open &raquo;</a></p>
+                        </div>-->
+                    </div>
+                    <hr>
+                    <footer>
+                        <p>&copy; Jozef Stefan Institute 2012</p>
+                    </footer>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

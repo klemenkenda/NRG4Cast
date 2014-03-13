@@ -1,0 +1,1 @@
+qm start -conf=sensors.conf -def=sensors.def

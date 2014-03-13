@@ -1,0 +1,336 @@
+{
+    "stores": [
+        {
+            "fields": [
+                {
+                    "name": "Name",
+                    "primary": true,
+                    "type": "string",
+                    "featureType": "none",
+                    "aggregationType": "none",
+                    "displayType": "text",
+                    "store": "memory",
+                    "codebook": false,
+                    "shortstring": true
+                },
+                {
+                    "name": "Position",
+                    "primary": false,
+                    "type": "float_pair",
+                    "featureType": "none",
+                    "aggregationType": "none",
+                    "displayType": "map",
+                    "store": "memory",
+                    "codebook": false,
+                    "shortstring": true
+                }
+            ],
+            "joins": [
+				{ "name": "hasSensor", "type": "index", "store": "Sensor", "inverse": "Node" }
+			],
+            "keys": [
+                {
+                    "field": "Name",
+                    "type": "value"
+                }
+            ],
+            "name": "Node",
+            "id": 0
+        },
+        {
+            "fields": [
+			    {
+                    "name": "Name",
+                    "primary": true,
+                    "type": "string",
+                    "featureType": "none",
+                    "aggregationType": "none",
+                    "displayType": "text",
+                    "store": "memory",
+                    "codebook": false,
+                    "shortstring": true
+                },
+                {
+                    "name": "Phenomena",
+                    "primary": false,
+                    "type": "string",
+                    "featureType": "none",
+                    "aggregationType": "none",
+                    "displayType": "text",
+                    "store": "memory",
+                    "codebook": false,
+                    "shortstring": true
+                },
+                {
+                    "name": "UoM",
+                    "primary": false,
+                    "type": "string",
+                    "featureType": "none",
+                    "aggregationType": "none",
+                    "displayType": "text",
+                    "store": "memory",
+                    "codebook": false,
+                    "shortstring": true
+                }
+            ],
+            "joins": [
+                {
+                    "name": "hasSensor",
+                    "type": "index",
+                    "store": "Sensor",
+					"inverse": "Type"
+                }				
+            ],
+            "keys": [
+                {
+                    "field": "Name",
+                    "type": "value"
+                }
+            ],
+            "name": "Type",
+            "id": 1
+        },
+        {
+            "fields": [
+                {
+                    "name": "Name",
+                    "primary": true,
+                    "type": "string",
+                    "featureType": "none",
+                    "aggregationType": "none",
+                    "displayType": "text",
+                    "store": "memory",
+                    "codebook": false,
+                    "shortstring": true
+                }
+            ],
+            "joins": [
+                {
+                    "name": "Node",
+                    "type": "field",
+                    "store": "Node",
+					"inverse": "hasSensor"
+                },
+				{
+					"name": "Type",
+					"type": "field",
+					"store": "Type",
+					"inverse": "hasSensor"
+				},
+				{
+					"name": "hasMeasurement",
+					"type": "index",
+					"store": "Measurement",
+					"inverse": "Sensor"
+				},
+				{
+					"name": "hasAggregate",
+					"type": "index",
+					"store": "Aggregate",
+					"inverse": "Sensor"
+				}
+            ],
+            "keys": [
+                {
+                    "field": "Name",
+                    "type": "value"
+                }
+            ],
+            "name": "Sensor",
+            "id": 2
+        },
+        {
+            "fields": [
+                {
+                    "name": "Timestamp",
+                    "primary": false,
+                    "type": "datetime",
+                    "featureType": "datetime",
+                    "aggregationType": "timeline",
+                    "displayType": "text",
+                    "store": "cache",
+                    "codebook": false,
+                    "shortstring": true
+                },
+                {
+                    "name": "Val",
+                    "primary": false,
+                    "type": "float",
+                    "featureType": "none",
+                    "aggregationType": "none",
+                    "displayType": "none",
+                    "store": "cache",
+                    "codebook": false,
+                    "shortstring": true
+                }
+            ],
+            "joins": [
+                {
+                    "name": "Sensor",
+                    "type": "field",
+                    "store": "Sensor",
+		    "inverse": "hasMeasurement"
+                },
+                {
+                    "name": "Type",
+                    "type": "field",
+                    "store": "Type"
+                },
+                {
+                    "name": "Node",
+                    "type": "field",
+                    "store": "Node"
+                }
+            ],
+            "keys": [
+                {
+                    "field": "Timestamp",
+                    "type": "datetime"
+                }
+            ],
+            "name": "Measurement",
+            "id": 3
+        },
+		{
+            "fields": [
+                {
+                    "name": "Timestamp",
+                    "primary": false,
+                    "type": "datetime",
+                    "featureType": "datetime",
+                    "aggregationType": "timeline",
+                    "displayType": "text",
+                    "store": "cache",
+                    "codebook": false,
+                    "shortstring": true
+                },
+                {
+                    "name": "Val",
+                    "primary": false,
+                    "type": "float",
+                    "featureType": "none",
+                    "aggregationType": "none",
+                    "displayType": "none",
+                    "store": "cache",
+                    "codebook": false,
+                    "shortstring": true
+                },
+				{
+					"name": "AggrType",
+                    "primary": false,
+                    "type": "string",
+                    "featureType": "none",
+                    "aggregationType": "none",
+                    "displayType": "text",
+                    "store": "cache",
+                    "codebook": false,
+                    "shortstring": true
+				},
+				{
+					"name": "WindowLen",
+                    "primary": false,
+                    "type": "string",
+                    "featureType": "none",
+                    "aggregationType": "none",
+                    "displayType": "text",
+                    "store": "cache",
+                    "codebook": false,
+                    "shortstring": true
+				}
+            ],
+            "joins": [
+                {
+                    "name": "Sensor",
+                    "type": "field",
+                    "store": "Sensor",
+		    "inverse": "hasAggregate"
+                },
+                {
+                    "name": "Type",
+                    "type": "field",
+                    "store": "Type"
+                },
+                {
+                    "name": "Node",
+                    "type": "field",
+                    "store": "Node"
+                }
+            ],
+            "keys": [
+                {
+                    "field": "Timestamp",
+                    "type": "datetime"
+                },
+				{
+					"field": "AggrType",
+					"type": "value"
+				},
+				{
+					"field": "WindowLen",
+					"type": "value"
+				}
+            ],
+            "name": "Aggregate",
+            "id": 4
+        },
+		
+		{
+            "fields": [
+                { "name": "Name", "primary": true, "type": "string", "featureType": "none", "aggregationType": "none", "displayType": "text", "store": "memory", "codebook": false, "shortstring": true },
+                {
+                    "name": "Rule",
+                    "primary": false,
+                    "type": "string",
+                    "featureType": "none",
+                    "aggregationType": "none",
+                    "displayType": "text",
+                    "store": "cache",
+                    "codebook": false,
+                    "shortstring": false
+                },
+				{
+                    "name": "Response",
+                    "primary": false,
+                    "type": "string",
+                    "featureType": "none",
+                    "aggregationType": "none",
+                    "displayType": "text",
+                    "store": "cache",
+                    "codebook": false,
+                    "shortstring": false
+                },
+				{
+				    "name": "TimeWindow",
+                    "primary": false,
+                    "type": "float",
+                    "featureType": "none",
+                    "aggregationType": "none",
+                    "displayType": "none",
+                    "store": "cache",
+                    "codebook": false,
+                    "shortstring": true
+				},
+				{
+                    "name": "LastTriggered",
+                    "primary": false,
+                    "type": "datetime",
+                    "featureType": "datetime",
+                    "aggregationType": "timeline",
+                    "displayType": "text",
+                    "store": "cache",
+                    "codebook": false,
+                    "shortstring": true
+                }
+            ],
+            "joins": [],
+            "keys": [
+                {
+                    "field": "Name",
+                    "type": "value"
+                }
+            ],
+            "name": "Rule",
+            "id": 5
+        }
+    ]
+}

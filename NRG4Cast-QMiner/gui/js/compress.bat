@@ -1,0 +1,1 @@
+uglifyjs -o qminer_gs.min.js qminer_gs.js

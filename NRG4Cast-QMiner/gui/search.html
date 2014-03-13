@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <style type="text/css">
+            body { padding-top: 60px; padding-bottom: 40px; }
+        </style>
+        <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="css/qm.css" rel="stylesheet">
+
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" >
+
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/google.jsapi.js"></script>
+        <script type="text/javascript" src="js/qminer_gs.js"></script>
+        <script>
+            google.load('visualization', '1', { packages: ['table'] });
+        </script>
+        <title>QMiner - Search</title>
+    </head>
+    <body>
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="main.html">QMiner</a>
+                    <div class="nav-collapse collapse">
+                                                    <!--<p class="navbar-text pull-right"> Logged in as <a href="#" class="navbar-link">Username</a>
+                                                                                                                                                                                                                                                                                    </p>-->
+                        <ul class="nav">
+                            <li><a href="main.html">Home</a></li>
+                            <li><a href="stores.html">Stores</a></li>
+                            <li><a href="admin.html">Administer</a></li>
+                            <li class="active"><a href="search.html">Search data</a></li>
+                            <!--<li><a href="report.html">View reports</a></li>
+                            <li><a href="about.html">About</a></li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+
+                <div class="span3">
+                    <div class="well">
+                        <h2>Search</h2>
+                        The data from the stores can searched using JSON syntax. To help you find what you are looking
+                        for see the examples below. Also, inspect the list of stores and their field, indexes and joins.
+                    </div>
+                    <div class="accordion" id="accordion2">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                    Examples
+                                </a>
+                            </div>
+                            <div id="collapseOne" class="accordion-body collapse in">
+                                <div class="accordion-inner">
+                                    <ul>
+                                        <li>Simple filter</li>
+                                        <li>Join</li>
+                                        <li>Where not exists</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                                    Stores
+                                </a>
+                            </div>
+                            <div id="collapseTwo" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    List of stores.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span9">
+
+
+                    <div class="well">
+                        <div class="query_form">
+                            <textarea id="query_text" rows="5" cols="80" class="search_text_area">{"$from":"People","Role":"Director"}</textarea>
+                            <br />
+                            <a class="btn btn-primary btn-large" href="#" onclick="javascript:load_stores()">Search &raquo;</a>
+                        </div>
+                    </div>
+
+                    <div id="result" style="display:none">
+                        <div id="record_set"></div>
+                    </div>
+
+                    <hr>
+                    <footer>
+                        <p>&copy; Jozef Stefan Institute 2012</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

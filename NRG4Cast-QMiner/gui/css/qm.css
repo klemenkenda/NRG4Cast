@@ -1,0 +1,538 @@
+/*@import url(http://fonts.googleapis.com/css?family=Karla);
+@import url(http://fonts.googleapis.com/css?family=Montserrat);*/
+
+/*body, html {
+	margin:0;
+	padding:0;
+	font-size: 16px;
+	font-family: 'Karla', sans-serif;
+}*/
+
+
+/*.dashboard {
+	padding: 15px;
+	margin: 15px;
+		
+	background: #EEE;
+	box-shadow: 3px 3px 5px #222;
+}*/
+
+.search_text_area {
+    width: 100%;
+}
+
+.side_item {
+    padding: 5px;
+}
+
+.side_item :hover {
+    background: #cccccc;
+    color: #eeeeee;
+}
+
+.single_item {
+    margin-top:  10px;
+    padding: 15px;
+    border: 1px solid #cccccc;
+    /*background-color: whiteSmoke;*/
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+h4{    
+    border-top: 1px solid #cccccc;
+    padding-top:  10px;
+}
+.entry_table tr th {
+    padding-right:  10px;
+    text-align:  center;
+}
+
+.entry_table tbody tr td,
+.entry_table tr td {
+    padding-right:  5px;
+    vertical-align: middle;
+}
+.entry_table tbody tr td select,
+.entry_table tr td select {
+    vertical-align: middle;
+}
+
+.field_desc_tab tr th {
+    text-align:  right;
+}
+.field_desc_tab tr td {
+    padding-left:  10px;
+}
+
+.icon, .bicon {
+    display: inline-block;
+    border: 1px solid #cccccc;
+    background-color: whiteSmoke;
+    padding: 4px;
+    text-align: center;
+    vertical-align: middle;
+    
+    width: 21px;
+    height: 21px;
+    min-width: 16px;
+    line-height: 24px;
+  
+    font-size: 24px;
+    font-weight: normal;
+    border-radius: 4px;    
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+.icon-small{
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    min-width: 14px;
+    line-height: 14px;
+}
+
+.icon-color {
+    color: #666666;
+}
+/*
+.bicon {
+    height: 28px;
+    font-size: 24px;
+}
+    */
+/*
+.icon-blue{
+    background-color:  #d6e0f4;
+}
+.icon-red{
+    background-color:  #ff3232;
+}
+.icon-green{
+    background-color:  #bcdbbe;
+}
+.icon-orange{
+    background-color:  #f95400;
+}
+    */
+
+/************************************************************************************************/
+/*
+
+[class^="bicon-"],
+[class*=" bicon-"] {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  margin-top: 1px;
+  *margin-right: .3em;
+  line-height: 28px;
+  vertical-align: text-top;
+  background-image: url("../img/icons-big.png");
+  background-position: 28px 28px;
+  background-repeat: no-repeat;
+}
+
+.bicon-0-0 { background-position: -0px -0px; }
+.bicon-0-1 { background-position: -0px -48px; }
+.bicon-0-2 { background-position: -0px -96px; }
+.bicon-0-3 { background-position: -0px -144px; }
+.bicon-0-4 { background-position: -0px -192px; }
+.bicon-0-5 { background-position: -0px -240px; }
+.bicon-0-6 { background-position: -0px -288px; }
+.bicon-0-7 { background-position: -0px -336px; }
+.bicon-0-8 { background-position: -0px -384px; }
+.bicon-0-9 { background-position: -0px -432px; }
+.bicon-0-10 { background-position: -0px -480px; }
+.bicon-0-11 { background-position: -0px -528px; }
+.bicon-0-12 { background-position: -0px -576px; }
+.bicon-0-13 { background-position: -0px -624px; }
+.bicon-0-14 { background-position: -0px -672px; }
+.bicon-0-15 { background-position: -0px -720px; }
+.bicon-0-16 { background-position: -0px -768px; }
+.bicon-0-17 { background-position: -0px -816px; }
+.bicon-0-18 { background-position: -0px -864px; }
+.bicon-0-19 { background-position: -0px -912px; }
+.bicon-0-20 { background-position: -0px -960px; }
+.bicon-0-21 { background-position: -0px -1008px; }
+.bicon-0-22 { background-position: -0px -1056px; }
+.bicon-0-23 { background-position: -0px -1104px; }
+.bicon-0-24 { background-position: -0px -1152px; }
+.bicon-0-25 { background-position: -0px -1200px; }
+.bicon-0-26 { background-position: -0px -1248px; }
+.bicon-0-27 { background-position: -0px -1296px; }
+.bicon-0-28 { background-position: -0px -1344px; }
+.bicon-0-29 { background-position: -0px -1392px; }
+.bicon-0-30 { background-position: -0px -1440px; }
+.bicon-0-31 { background-position: -0px -1488px; }
+.bicon-0-32 { background-position: -0px -1536px; }
+.bicon-0-33 { background-position: -0px -1584px; }
+.bicon-0-34 { background-position: -0px -1632px; }
+.bicon-0-35 { background-position: -0px -1680px; }
+.bicon-0-36 { background-position: -0px -1728px; }
+.bicon-0-37 { background-position: -0px -1776px; }
+.bicon-0-38 { background-position: -0px -1824px; }
+.bicon-0-39 { background-position: -0px -1872px; }
+.bicon-1-0 { background-position: -48px -0px; }
+.bicon-1-1 { background-position: -48px -48px; }
+.bicon-1-2 { background-position: -48px -96px; }
+.bicon-1-3 { background-position: -48px -144px; }
+.bicon-1-4 { background-position: -48px -192px; }
+.bicon-1-5 { background-position: -48px -240px; }
+.bicon-1-6 { background-position: -48px -288px; }
+.bicon-1-7, .bicon-book { background-position: -48px -336px; }
+.bicon-1-8 { background-position: -48px -384px; }
+.bicon-1-9 { background-position: -48px -432px; }
+.bicon-1-10 { background-position: -48px -480px; }
+.bicon-1-11 { background-position: -48px -528px; }
+.bicon-1-12 { background-position: -48px -576px; }
+.bicon-1-13 { background-position: -48px -624px; }
+.bicon-1-14 { background-position: -48px -672px; }
+.bicon-1-15 { background-position: -48px -720px; }
+.bicon-1-16 { background-position: -48px -768px; }
+.bicon-1-17 { background-position: -48px -816px; }
+.bicon-1-18 { background-position: -48px -864px; }
+.bicon-1-19 { background-position: -48px -912px; }
+.bicon-1-20 { background-position: -48px -960px; }
+.bicon-1-21 { background-position: -48px -1008px; }
+.bicon-1-22 { background-position: -48px -1056px; }
+.bicon-1-23 { background-position: -48px -1104px; }
+.bicon-1-24 { background-position: -48px -1152px; }
+.bicon-1-25 { background-position: -48px -1200px; }
+.bicon-1-26 { background-position: -48px -1248px; }
+.bicon-1-27 { background-position: -48px -1296px; }
+.bicon-1-28 { background-position: -48px -1344px; }
+.bicon-1-29 { background-position: -48px -1392px; }
+.bicon-1-30 { background-position: -48px -1440px; }
+.bicon-1-31 { background-position: -48px -1488px; }
+.bicon-1-32 { background-position: -48px -1536px; }
+.bicon-1-33 { background-position: -48px -1584px; }
+.bicon-1-34 { background-position: -48px -1632px; }
+.bicon-1-35 { background-position: -48px -1680px; }
+.bicon-1-36 { background-position: -48px -1728px; }
+.bicon-1-37 { background-position: -48px -1776px; }
+.bicon-1-38 { background-position: -48px -1824px; }
+.bicon-1-39 { background-position: -48px -1872px; }
+.bicon-2-0 { background-position: -96px -0px; }
+.bicon-2-1 { background-position: -96px -48px; }
+.bicon-2-2 { background-position: -96px -96px; }
+.bicon-2-3 { background-position: -96px -144px; }
+.bicon-2-4 { background-position: -96px -192px; }
+.bicon-2-5 { background-position: -96px -240px; }
+.bicon-2-6 { background-position: -96px -288px; }
+.bicon-2-7 { background-position: -96px -336px; }
+.bicon-2-8 { background-position: -96px -384px; }
+.bicon-2-9 { background-position: -96px -432px; }
+.bicon-2-10 { background-position: -96px -480px; }
+.bicon-2-11 { background-position: -96px -528px; }
+.bicon-2-12 { background-position: -96px -576px; }
+.bicon-2-13 { background-position: -96px -624px; }
+.bicon-2-14 { background-position: -96px -672px; }
+.bicon-2-15 { background-position: -96px -720px; }
+.bicon-2-16 { background-position: -96px -768px; }
+.bicon-2-17 { background-position: -96px -816px; }
+.bicon-2-18 { background-position: -96px -864px; }
+.bicon-2-19 { background-position: -96px -912px; }
+.bicon-2-20 { background-position: -96px -960px; }
+.bicon-2-21 { background-position: -96px -1008px; }
+.bicon-2-22 { background-position: -96px -1056px; }
+.bicon-2-23 { background-position: -96px -1104px; }
+.bicon-2-24 { background-position: -96px -1152px; }
+.bicon-2-25 { background-position: -96px -1200px; }
+.bicon-2-26 { background-position: -96px -1248px; }
+.bicon-2-27 { background-position: -96px -1296px; }
+.bicon-2-28 { background-position: -96px -1344px; }
+.bicon-2-29 { background-position: -96px -1392px; }
+.bicon-2-30 { background-position: -96px -1440px; }
+.bicon-2-31 { background-position: -96px -1488px; }
+.bicon-2-32 { background-position: -96px -1536px; }
+.bicon-2-33 { background-position: -96px -1584px; }
+.bicon-2-34 { background-position: -96px -1632px; }
+.bicon-2-35 { background-position: -96px -1680px; }
+.bicon-2-36 { background-position: -96px -1728px; }
+.bicon-2-37 { background-position: -96px -1776px; }
+.bicon-2-38 { background-position: -96px -1824px; }
+.bicon-2-39 { background-position: -96px -1872px; }
+.bicon-3-0 { background-position: -144px -0px; }
+.bicon-3-1 { background-position: -144px -48px; }
+.bicon-3-2 { background-position: -144px -96px; }
+.bicon-3-3 { background-position: -144px -144px; }
+.bicon-3-4 { background-position: -144px -192px; }
+.bicon-3-5 { background-position: -144px -240px; }
+.bicon-3-6 { background-position: -144px -288px; }
+.bicon-3-7 { background-position: -144px -336px; }
+.bicon-3-8 { background-position: -144px -384px; }
+.bicon-3-9 { background-position: -144px -432px; }
+.bicon-3-10 { background-position: -144px -480px; }
+.bicon-3-11 { background-position: -144px -528px; }
+.bicon-3-12 { background-position: -144px -576px; }
+.bicon-3-13 { background-position: -144px -624px; }
+.bicon-3-14 { background-position: -144px -672px; }
+.bicon-3-15 { background-position: -144px -720px; }
+.bicon-3-16 { background-position: -144px -768px; }
+.bicon-3-17 { background-position: -144px -816px; }
+.bicon-3-18 { background-position: -144px -864px; }
+.bicon-3-19 { background-position: -144px -912px; }
+.bicon-3-20 { background-position: -144px -960px; }
+.bicon-3-21 { background-position: -144px -1008px; }
+.bicon-3-22 { background-position: -144px -1056px; }
+.bicon-3-23 { background-position: -144px -1104px; }
+.bicon-3-24 { background-position: -144px -1152px; }
+.bicon-3-25 { background-position: -144px -1200px; }
+.bicon-3-26 { background-position: -144px -1248px; }
+.bicon-3-27 { background-position: -144px -1296px; }
+.bicon-3-28 { background-position: -144px -1344px; }
+.bicon-3-29 { background-position: -144px -1392px; }
+.bicon-3-30 { background-position: -144px -1440px; }
+.bicon-3-31 { background-position: -144px -1488px; }
+.bicon-3-32 { background-position: -144px -1536px; }
+.bicon-3-33 { background-position: -144px -1584px; }
+.bicon-3-34 { background-position: -144px -1632px; }
+.bicon-3-35 { background-position: -144px -1680px; }
+.bicon-3-36 { background-position: -144px -1728px; }
+.bicon-3-37 { background-position: -144px -1776px; }
+.bicon-3-38 { background-position: -144px -1824px; }
+.bicon-3-39 { background-position: -144px -1872px; }
+.bicon-4-0 { background-position: -192px -0px; }
+.bicon-4-1 { background-position: -192px -48px; }
+.bicon-4-2 { background-position: -192px -96px; }
+.bicon-4-3 { background-position: -192px -144px; }
+.bicon-4-4, .bicon-keys { background-position: -192px -192px; }
+.bicon-4-5 { background-position: -192px -240px; }
+.bicon-4-6 { background-position: -192px -288px; }
+.bicon-4-7 { background-position: -192px -336px; }
+.bicon-4-8 { background-position: -192px -384px; }
+.bicon-4-9 { background-position: -192px -432px; }
+.bicon-4-10 { background-position: -192px -480px; }
+.bicon-4-11 { background-position: -192px -528px; }
+.bicon-4-12 { background-position: -192px -576px; }
+.bicon-4-13 { background-position: -192px -624px; }
+.bicon-4-14 { background-position: -192px -672px; }
+.bicon-4-15 { background-position: -192px -720px; }
+.bicon-4-16 { background-position: -192px -768px; }
+.bicon-4-17 { background-position: -192px -816px; }
+.bicon-4-18 { background-position: -192px -864px; }
+.bicon-4-19 { background-position: -192px -912px; }
+.bicon-4-20 { background-position: -192px -960px; }
+.bicon-4-21, .bicon-resize-small { background-position: -192px -1008px; }
+.bicon-4-22 { background-position: -192px -1056px; }
+.bicon-4-23 { background-position: -192px -1104px; }
+.bicon-4-24 { background-position: -192px -1152px; }
+.bicon-4-25 { background-position: -192px -1200px; }
+.bicon-4-26 { background-position: -192px -1248px; }
+.bicon-4-27 { background-position: -192px -1296px; }
+.bicon-4-28 { background-position: -192px -1344px; }
+.bicon-4-29 { background-position: -192px -1392px; }
+.bicon-4-30 { background-position: -192px -1440px; }
+.bicon-4-31 { background-position: -192px -1488px; }
+.bicon-4-32 { background-position: -192px -1536px; }
+.bicon-4-33 { background-position: -192px -1584px; }
+.bicon-4-34 { background-position: -192px -1632px; }
+.bicon-4-35 { background-position: -192px -1680px; }
+.bicon-4-36 { background-position: -192px -1728px; }
+.bicon-4-37 { background-position: -192px -1776px; }
+.bicon-4-38 { background-position: -192px -1824px; }
+.bicon-4-39 { background-position: -192px -1872px; }
+.bicon-5-0 { background-position: -240px -0px; }
+.bicon-5-1 { background-position: -240px -48px; }
+.bicon-5-2 { background-position: -240px -96px; }
+.bicon-5-3 { background-position: -240px -144px; }
+.bicon-5-4 { background-position: -240px -192px; }
+.bicon-5-5 { background-position: -240px -240px; }
+.bicon-5-6, .bicon-tag { background-position: -240px -288px; }
+.bicon-5-7, .bicon-tags { background-position: -240px -336px; }
+.bicon-5-8 { background-position: -240px -384px; }
+.bicon-5-9 { background-position: -240px -432px; }
+.bicon-5-10 { background-position: -240px -480px; }
+.bicon-5-11 { background-position: -240px -528px; }
+.bicon-5-12 { background-position: -240px -576px; }
+.bicon-5-13 { background-position: -240px -624px; }
+.bicon-5-14 { background-position: -240px -672px; }
+.bicon-5-15 { background-position: -240px -720px; }
+.bicon-5-16 { background-position: -240px -768px; }
+.bicon-5-17 { background-position: -240px -816px; }
+.bicon-5-18 { background-position: -240px -864px; }
+.bicon-5-19 { background-position: -240px -912px; }
+.bicon-5-20 { background-position: -240px -960px; }
+.bicon-5-21 { background-position: -240px -1008px; }
+.bicon-5-22 { background-position: -240px -1056px; }
+.bicon-5-23 { background-position: -240px -1104px; }
+.bicon-5-24 { background-position: -240px -1152px; }
+.bicon-5-25 { background-position: -240px -1200px; }
+.bicon-5-26 { background-position: -240px -1248px; }
+.bicon-5-27 { background-position: -240px -1296px; }
+.bicon-5-28 { background-position: -240px -1344px; }
+.bicon-5-29 { background-position: -240px -1392px; }
+.bicon-5-30 { background-position: -240px -1440px; }
+.bicon-5-31 { background-position: -240px -1488px; }
+.bicon-5-32 { background-position: -240px -1536px; }
+.bicon-5-33 { background-position: -240px -1584px; }
+.bicon-5-34 { background-position: -240px -1632px; }
+.bicon-5-35 { background-position: -240px -1680px; }
+.bicon-5-36 { background-position: -240px -1728px; }
+.bicon-5-37 { background-position: -240px -1776px; }
+.bicon-5-38 { background-position: -240px -1824px; }
+.bicon-5-39 { background-position: -240px -1872px; }
+.bicon-6-0 { background-position: -288px -0px; }
+.bicon-6-1 { background-position: -288px -48px; }
+.bicon-6-2 { background-position: -288px -96px; }
+.bicon-6-3 { background-position: -288px -144px; }
+.bicon-6-4 { background-position: -288px -192px; }
+.bicon-6-5 { background-position: -288px -240px; }
+.bicon-6-6, .bicon-labels { background-position: -288px -288px; }
+.bicon-6-7 { background-position: -288px -336px; }
+.bicon-6-8 { background-position: -288px -384px; }
+.bicon-6-9 { background-position: -288px -432px; }
+.bicon-6-10 { background-position: -288px -480px; }
+.bicon-6-11 { background-position: -288px -528px; }
+.bicon-6-12 { background-position: -288px -576px; }
+.bicon-6-13 { background-position: -288px -624px; }
+.bicon-6-14 { background-position: -288px -672px; }
+.bicon-6-15 { background-position: -288px -720px; }
+.bicon-6-16 { background-position: -288px -768px; }
+.bicon-6-17 { background-position: -288px -816px; }
+.bicon-6-18 { background-position: -288px -864px; }
+.bicon-6-19 { background-position: -288px -912px; }
+.bicon-6-20 { background-position: -288px -960px; }
+.bicon-6-21 { background-position: -288px -1008px; }
+.bicon-6-22 { background-position: -288px -1056px; }
+.bicon-6-23 { background-position: -288px -1104px; }
+.bicon-6-24 { background-position: -288px -1152px; }
+.bicon-6-25 { background-position: -288px -1200px; }
+.bicon-6-26 { background-position: -288px -1248px; }
+.bicon-6-27 { background-position: -288px -1296px; }
+.bicon-6-28 { background-position: -288px -1344px; }
+.bicon-6-29 { background-position: -288px -1392px; }
+.bicon-6-30 { background-position: -288px -1440px; }
+.bicon-6-31 { background-position: -288px -1488px; }
+.bicon-6-32 { background-position: -288px -1536px; }
+.bicon-6-33 { background-position: -288px -1584px; }
+.bicon-6-34 { background-position: -288px -1632px; }
+.bicon-6-35 { background-position: -288px -1680px; }
+.bicon-6-36 { background-position: -288px -1728px; }
+.bicon-6-37 { background-position: -288px -1776px; }
+.bicon-6-38 { background-position: -288px -1824px; }
+.bicon-6-39 { background-position: -288px -1872px; }
+.bicon-7-0 { background-position: -336px -0px; }
+.bicon-7-1 { background-position: -336px -48px; }
+.bicon-7-2 { background-position: -336px -96px; }
+.bicon-7-3 { background-position: -336px -144px; }
+.bicon-7-4 { background-position: -336px -192px; }
+.bicon-7-5 { background-position: -336px -240px; }
+.bicon-7-6 { background-position: -336px -288px; }
+.bicon-7-7 { background-position: -336px -336px; }
+.bicon-7-8 { background-position: -336px -384px; }
+.bicon-7-9 { background-position: -336px -432px; }
+.bicon-7-10 { background-position: -336px -480px; }
+.bicon-7-11 { background-position: -336px -528px; }
+.bicon-7-12 { background-position: -336px -576px; }
+.bicon-7-13 { background-position: -336px -624px; }
+.bicon-7-14 { background-position: -336px -672px; }
+.bicon-7-15 { background-position: -336px -720px; }
+.bicon-7-16 { background-position: -336px -768px; }
+.bicon-7-17 { background-position: -336px -816px; }
+.bicon-7-18 { background-position: -336px -864px; }
+.bicon-7-19 { background-position: -336px -912px; }
+.bicon-7-20 { background-position: -336px -960px; }
+.bicon-7-21 { background-position: -336px -1008px; }
+.bicon-7-22 { background-position: -336px -1056px; }
+.bicon-7-23 { background-position: -336px -1104px; }
+.bicon-7-24 { background-position: -336px -1152px; }
+.bicon-7-25 { background-position: -336px -1200px; }
+.bicon-7-26 { background-position: -336px -1248px; }
+.bicon-7-27 { background-position: -336px -1296px; }
+.bicon-7-28 { background-position: -336px -1344px; }
+.bicon-7-29 { background-position: -336px -1392px; }
+.bicon-7-30 { background-position: -336px -1440px; }
+.bicon-7-31 { background-position: -336px -1488px; }
+.bicon-7-32 { background-position: -336px -1536px; }
+.bicon-7-33 { background-position: -336px -1584px; }
+.bicon-7-34 { background-position: -336px -1632px; }
+.bicon-7-35 { background-position: -336px -1680px; }
+.bicon-7-36 { background-position: -336px -1728px; }
+.bicon-7-37 { background-position: -336px -1776px; }
+.bicon-7-38 { background-position: -336px -1824px; }
+.bicon-7-39 { background-position: -336px -1872px; }
+.bicon-8-0 { background-position: -384px -0px; }
+.bicon-8-1 { background-position: -384px -48px; }
+.bicon-8-2 { background-position: -384px -96px; }
+.bicon-8-3 { background-position: -384px -144px; }
+.bicon-8-4 { background-position: -384px -192px; }
+.bicon-8-5 { background-position: -384px -240px; }
+.bicon-8-6 { background-position: -384px -288px; }
+.bicon-8-7 { background-position: -384px -336px; }
+.bicon-8-8 { background-position: -384px -384px; }
+.bicon-8-9 { background-position: -384px -432px; }
+.bicon-8-10 { background-position: -384px -480px; }
+.bicon-8-11 { background-position: -384px -528px; }
+.bicon-8-12 { background-position: -384px -576px; }
+.bicon-8-13 { background-position: -384px -624px; }
+.bicon-8-14 { background-position: -384px -672px; }
+.bicon-8-15 { background-position: -384px -720px; }
+.bicon-8-16 { background-position: -384px -768px; }
+.bicon-8-17 { background-position: -384px -816px; }
+.bicon-8-18 { background-position: -384px -864px; }
+.bicon-8-19 { background-position: -384px -912px; }
+.bicon-8-20 { background-position: -384px -960px; }
+.bicon-8-21 { background-position: -384px -1008px; }
+.bicon-8-22 { background-position: -384px -1056px; }
+.bicon-8-23 { background-position: -384px -1104px; }
+.bicon-8-24 { background-position: -384px -1152px; }
+.bicon-8-25 { background-position: -384px -1200px; }
+.bicon-8-26 { background-position: -384px -1248px; }
+.bicon-8-27 { background-position: -384px -1296px; }
+.bicon-8-28 { background-position: -384px -1344px; }
+.bicon-8-29 { background-position: -384px -1392px; }
+.bicon-8-30 { background-position: -384px -1440px; }
+.bicon-8-31 { background-position: -384px -1488px; }
+.bicon-8-32 { background-position: -384px -1536px; }
+.bicon-8-33 { background-position: -384px -1584px; }
+.bicon-8-34 { background-position: -384px -1632px; }
+.bicon-8-35 { background-position: -384px -1680px; }
+.bicon-8-36 { background-position: -384px -1728px; }
+.bicon-8-37 { background-position: -384px -1776px; }
+.bicon-8-38 { background-position: -384px -1824px; }
+.bicon-8-39 { background-position: -384px -1872px; }
+.bicon-9-0 { background-position: -432px -0px; }
+.bicon-9-1 { background-position: -432px -48px; }
+.bicon-9-2 { background-position: -432px -96px; }
+.bicon-9-3 { background-position: -432px -144px; }
+.bicon-9-4 { background-position: -432px -192px; }
+.bicon-9-5 { background-position: -432px -240px; }
+.bicon-9-6 { background-position: -432px -288px; }
+.bicon-9-7 { background-position: -432px -336px; }
+.bicon-9-8 { background-position: -432px -384px; }
+.bicon-9-9 { background-position: -432px -432px; }
+.bicon-9-10 { background-position: -432px -480px; }
+.bicon-9-11 { background-position: -432px -528px; }
+.bicon-9-12 { background-position: -432px -576px; }
+.bicon-9-13 { background-position: -432px -624px; }
+.bicon-9-14 { background-position: -432px -672px; }
+.bicon-9-15 { background-position: -432px -720px; }
+.bicon-9-16 { background-position: -432px -768px; }
+.bicon-9-17 { background-position: -432px -816px; }
+.bicon-9-18 { background-position: -432px -864px; }
+.bicon-9-19 { background-position: -432px -912px; }
+.bicon-9-20 { background-position: -432px -960px; }
+.bicon-9-21 { background-position: -432px -1008px; }
+.bicon-9-22 { background-position: -432px -1056px; }
+.bicon-9-23 { background-position: -432px -1104px; }
+.bicon-9-24 { background-position: -432px -1152px; }
+.bicon-9-25 { background-position: -432px -1200px; }
+.bicon-9-26 { background-position: -432px -1248px; }
+.bicon-9-27 { background-position: -432px -1296px; }
+.bicon-9-28 { background-position: -432px -1344px; }
+.bicon-9-29 { background-position: -432px -1392px; }
+.bicon-9-30 { background-position: -432px -1440px; }
+.bicon-9-31 { background-position: -432px -1488px; }
+.bicon-9-32 { background-position: -432px -1536px; }
+.bicon-9-33 { background-position: -432px -1584px; }
+.bicon-9-34 { background-position: -432px -1632px; }
+.bicon-9-35 { background-position: -432px -1680px; }
+.bicon-9-36 { background-position: -432px -1728px; }
+.bicon-9-37 { background-position: -432px -1776px; }
+.bicon-9-38 { background-position: -432px -1824px; }
+.bicon-9-39 { background-position: -432px -1872px; }
+*/

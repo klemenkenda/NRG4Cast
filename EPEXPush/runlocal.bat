@@ -1,0 +1,1 @@
+C:\Users\Klemen\Programs\Python\python parselocal.py

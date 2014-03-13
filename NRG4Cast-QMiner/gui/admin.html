@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+            body { padding-top: 60px; padding-bottom: 40px; }
+        </style>
+        <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="css/font-awesome.css" rel="stylesheet">
+        <link href="css/qm.css" rel="stylesheet">
+
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/knockout.js"></script>
+        <script type="text/javascript" src="js/qminer_gs.js"></script>
+        <script>
+            $(document).ready(function () {            
+                Qm.Admin.Model = new Qm.Admin.CreateModel();
+                Qm.Admin.Model.AddStore();
+                ko.applyBindings(Qm.Admin.Model);
+            });
+        </script>
+        <title>QMiner - Administration</title>
+    </head>
+    <body>
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="main.html">QMiner</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li><a href="main.html">Home</a></li>
+                            <li><a href="stores.html">Stores</a></li>
+                            <li class="active"><a href="admin.html">Administer</a></li>
+                            <li><a href="search.html">Search data</a></li>
+                            <!--<li><a href="report.html">View reports</a></li>
+                            <li><a href="about.html">About</a></li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+
+
+                <div class="well">
+                    <h2>New schema</h2>
+                        Create new schema by entering new stores, their fields, key-indexes and joins.
+                </div>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <button class="btn" data-bind="click: $root.AddStore"> <i class="icon-plus"></i> Add new store</button>
+                        </td>
+                        <td style="text-align: right;">
+                            <button class="btn" data-bind="click: $root.Validate"><i class="icon-ok"></i> Validate </button>
+                            <button class="btn" data-bind="disable: disable_btn_view, click: $root.CreateRequest"><i class="icon-align-left"></i> View request </button>
+                            <button class="btn btn-primary" data-bind="visible: show_btn_send, click: $root.SendToServer">Create stores <i class="icon-upload-alt icon-white"></i></button>
+                        </td>
+                    </tr>
+                </table>
+                <!-- debug panel -->
+                <!--errors=<span data-bind="text: $root.has_errors"></span>,
+                existing_schema=<span data-bind="text: $root.existing_schema"></span>,
+                validate_executed=<span data-bind="text: $root.validate_executed"></span>,
+                show_btn_send=<span data-bind="text: $root.show_btn_send"></span>,-->
+                <!-- end debug panel -->
+                <div data-bind="if: validate_executed() == true && has_errors() == false">
+                    <div class="alert alert-success fade in" style="margin-top: 10px;">
+                        <i class="icon-ok icon-large"></i> Validation successful.
+                    </div>
+                </div>
+
+                <div class="well" data-bind="visible: show_json" style="text-align: right">
+                    <a href="#" data-bind="click: $root.HideJson" class="icon-color"><i class="icon-remove icon-color"></i> Hide</a> <br />
+                    <textarea data-bind="html: json_for_server" rows="20" style="width: 99%">
+                    </textarea>
+                </div>
+
+                <div data-bind="if: validate_executed && has_errors">
+                    <div class="alert alert-error fade in" style="margin-top: 10px;">
+                        <i class="icon-warning-sign icon-large"></i> There are errors in schema definition. Review and correct them before continuing.
+                    </div>
+                    <div class="alert fade in" data-bind="visible: error_msg">
+                        <span data-bind="html: error_msg"></span>
+                    </div>
+                </div>
+                <div id="kb_collection" data-bind="foreach: stores">
+                    <div class="single_item">
+                        <div style="float:  right">
+                            <a href="#" data-bind="click: $root.RemoveStore"><i class="icon-remove icon-color"></i></a>
+                        </div>
+                        <h3>
+                            Store <input type="text" class="input-medium" data-bind="value: name" /> -
+                            id <input type="text" class="input-medium" data-bind="value: id, valueUpdate: 'keyup'" />                            
+                        </h3>
+                        <div data-bind="if: display_error_message">
+                            <div class="alert fade in">
+                                <i class="icon-warning-sign icon-large"></i> <span data-bind="html: error_msg"></span>
+                            </div>
+                        </div>
+                        <h4>Fields
+                            <button class="btn" data-bind="click: $root.AddField"><i class="icon-plus"></i> Add new field </button></h4>
+                        <table class="entry_table">
+                            <tr>
+                                <th>Name</th>
+                                <th>Primary</th>
+                                <th>Type</th>
+                                <th>Feature</th>
+                                <th>Aggr</th>
+                                <th>Display</th>
+                                <th>Storage</th>
+                                <th>Default</th>
+                                <th>Codebook</th>
+                                <th>Short string</th>
+                            </tr>
+                            <tbody data-bind="foreach: fields">
+                            <tr>
+                                <td><input type="text" class="input-small" data-bind="value: name" /></td>
+                                <td style="text-align:  center;"><input type="checkbox" data-bind="checked: primary" /></td>
+                                <td><select class="input-small" data-bind="options: $root.types, value: type"></select></td>
+                                <td><select class="input-small" data-bind="options: $root.feature_types, value: featureType"></select></td>
+                                <td><select class="input-small" data-bind="options: $root.aggr_types, value: aggregationType"></select></td>
+                                <td><select class="input-small" data-bind="options: $root.display_types, value: displayType"></select></td>
+                                <td><select class="input-small" data-bind="options: $root.store_types, value: store"></select></td>
+                                <td><input type="text" class="input-small" data-bind="value: default_val" /></td>
+                                <td style="text-align:  center;"><input type="checkbox" data-bind="checked: codebook" /></td>
+                                <td style="text-align:  center;"><input type="checkbox" data-bind="checked: shortstring" /></td>
+                                <td><a href="#" data-bind="click: $root.RemoveField"><i class="icon-remove icon-color"></i></a></td>
+                            </tr>
+                                </tbody>
+                        </table>
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width:  50%; vertical-align: top">
+                                    <h4>Indexes</h4>
+                                    <button class="btn" data-bind="click: $root.AddIndex"><i class="icon-plus"></i> Add new index </button>
+                                    <table class="entry_table">
+                                        <tr>
+                                            <th>Field</th>
+                                            <th>Name</th>
+                                            <th>Type</th>
+                                            <th>Vocabulary</th>
+                                        </tr>
+                                        <tbody data-bind="foreach: indexes">
+                                        <tr>
+                                            <td><select class="input-medium" data-bind="options: field_names, value: field"></select></td>
+                                            <td><input type="text" class="input-small" data-bind="value: name" /></td>
+                                            <td><select class="input-small" data-bind="options: $root.index_types, value: type"></select></td>
+                                            <td><input type="text" class="input-small" data-bind="value: vocabulary" /></td>
+
+                                            <td><a href="#" data-bind="click: $root.RemoveIndex"><i class="icon-remove icon-color"></i></a></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td style="vertical-align: top">
+
+                                    <h4>Joins</h4>
+                                    <button class="btn" data-bind="click: $root.AddJoin"><i class="icon-plus"></i> Add new join </button>
+                                    <table class="entry_table">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Type</th>
+                                            <th>Store</th>
+                                        </tr>
+                                        <tbody data-bind="foreach: joins">
+                                        <tr>
+                                            <td><input type="text" class="input-small" data-bind="value: name" /></td>
+                                            <td><select class="input-small" data-bind="options: $root.join_types, value: type"></select></td>
+                                            <td><select class="input-medium" data-bind="options: $root.store_names, value: store"></select></td>
+                                            <td><a href="#" data-bind="click: $root.RemoveJoin"><i class="icon-remove icon-color"></i></a></td>
+                                        </tr>
+                            </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <h4>Store window</h4>
+                        <table>
+                            <tr>
+                                <td style="vertical-align: top">
+                                    <!--<select class="input-small" data-bind="options: $root.window_types, value: window_type"></select>-->
+                                    <label>
+                                        <input type="radio" name="rdWindowType" value="None" data-bind="checked: window_type" />
+                                            No window
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="rdWindowType" value="Fixed" data-bind="checked: window_type" />
+                                            Fixed length
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="rdWindowType" value="Time" data-bind="checked: window_type" />
+                                            Time-based window
+                                    </label>
+                                </td>
+                                <td style="padding-left: 40px; vertical-align: top;">
+                                    <table>
+                                        <tr data-bind="visible: window_type()=='Fixed' || window_type()=='Time'">
+                                            <td>Window length:
+                                            </td>
+                                            <td><input class="input-small" data-bind="value: window_len" /></td>
+                                        </tr>
+                                        <tr data-bind="visible: window_type()=='Time' ">
+                                            <td>Window unit:</td>
+                                            <td><select class="input-small" data-bind="options: $root.time_window_units, value: window_unit"></select></td>
+                                        </tr>
+                                        <tr data-bind="visible: window_type()=='Time' ">
+                                            <td>Window field:</td>
+                                            <td>
+                                                <select class="input-small" data-bind="options: field_names2, value: window_field"></select>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                                                            <!--<div data-bind="visible: window_type()=='Fixed' || window_type()=='Time'">
+                                                                                                                                                                                                            Window length: <input class="input-small" data-bind="value: window_len" />
+                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                    <div data-bind="visible: window_type()=='Time' ">
+                                                                                                                                                                                                            Window unit: <select class="input-small" data-bind="options: $root.time_window_units, value: window_unit"></select>
+                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                    <div data-bind="visible: window_type()=='Time' ">
+                                                                                                                                                                                                            Window field: <select class="input-small" data-bind="options: field_names2, value: window_field"></select>
+                                                                                                                                                                                                    </div>-->
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

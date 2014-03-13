@@ -1,0 +1,334 @@
+[
+	{
+		"storeId": 12,
+		"storeName": "Visit",
+		"storeRecords": 0,
+		"fields": [
+			{
+				"fieldId": 0,
+				"fieldName": "Cookie",
+				"valueType": "STRING",
+				"featureType": "NONE",
+				"aggregationType": "NONE",
+				"displayType": "NONE",
+				"keys": [
+					{
+						"keyId": 0
+					},
+					{
+						"keyId": 1
+					}
+				]
+			},
+			{
+				"fieldId": 1,
+				"fieldName": "ServerTime",
+				"valueType": "DATE-TIME",
+				"featureType": "DATE-TIME",
+				"aggregationType": "NONE",
+				"displayType": "TEXT"
+			},
+			{
+				"fieldId": 2,
+				"fieldName": "PageId",
+				"valueType": "UNSIGNED INTEGER 64",
+				"featureType": "NONE",
+				"aggregationType": "NONE",
+				"displayType": "NONE"
+			}
+		],
+		"keys": [
+			{
+				"keyId": 0,
+				"keyName": "Cookie",
+				"keyText": false,
+				"aggregation": false,
+				"wordVoc": {
+					"wordVocId": 0,
+					"values": 14
+				},
+				"fields": [
+					{
+						"fieldId": 0
+					}
+				]
+			},
+			{
+				"keyId": 1,
+				"keyName": "ServerTime",
+				"keyText": false,
+				"aggregation": false,
+				"wordVoc": {
+					"wordVocId": 0,
+					"values": 14
+				},
+				"fields": [
+					{
+						"fieldId": 0
+					}
+				]
+			}
+		],
+		"joins": [
+			{
+				"joinId": 0,
+				"joinName": "Page",
+				"joinStoreId": 32,
+				"joinStoreName": "Page",
+				"joinType": "field"
+			}
+		]
+	},
+	{
+		"storeId": 32,
+		"storeName": "Page",
+		"storeRecords": 0,
+		"fields": [
+			{
+				"fieldId": 0,
+				"fieldName": "URL",
+				"valueType": "STRING",
+				"featureType": "NONE",
+				"aggregationType": "NONE",
+				"displayType": "TEXT",
+				"keys": [
+					{
+						"keyId": 2
+					},
+					{
+						"keyId": 3
+					},
+					{
+						"keyId": 4
+					}
+				]
+			},
+			{
+				"fieldId": 1,
+				"fieldName": "Title",
+				"valueType": "STRING",
+				"featureType": "NONE",
+				"aggregationType": "NONE",
+				"displayType": "TEXT"
+			},
+			{
+				"fieldId": 2,
+				"fieldName": "Description",
+				"valueType": "STRING",
+				"featureType": "NONE",
+				"aggregationType": "NONE",
+				"displayType": "TEXT"
+			}
+		],
+		"keys": [
+			{
+				"keyId": 2,
+				"keyName": "URL",
+				"keyText": false,
+				"aggregation": false,
+				"wordVoc": {
+					"wordVocId": 0,
+					"values": 14
+				},
+				"fields": [
+					{
+						"fieldId": 0
+					}
+				]
+			},
+			{
+				"keyId": 3,
+				"keyName": "Title",
+				"keyText": false,
+				"aggregation": false,
+				"wordVoc": {
+					"wordVocId": 0,
+					"values": 14
+				},
+				"fields": [
+					{
+						"fieldId": 0
+					}
+				]
+			},
+			{
+				"keyId": 4,
+				"keyName": "Description",
+				"keyText": true,
+				"aggregation": false,
+				"wordVoc": {
+					"wordVocId": 0,
+					"values": 14
+				},
+				"fields": [
+					{
+						"fieldId": 0
+					}
+				]
+			}
+		],
+		"joins": []
+	},
+	{
+		"storeId": 112,
+		"storeName": "Visit2",
+		"storeRecords": 3,
+		"fields": [
+			{
+				"fieldId": 0,
+				"fieldName": "Cookie",
+				"valueType": "STRING",
+				"featureType": "NONE",
+				"aggregationType": "NONE",
+				"displayType": "NONE",
+				"keys": [
+					{
+						"keyId": 5
+					},
+					{
+						"keyId": 6
+					}
+				]
+			},
+			{
+				"fieldId": 1,
+				"fieldName": "ServerTime",
+				"valueType": "DATE-TIME",
+				"featureType": "DATE-TIME",
+				"aggregationType": "NONE",
+				"displayType": "TEXT"
+			}
+		],
+		"keys": [
+			{
+				"keyId": 5,
+				"keyName": "Cookie",
+				"keyText": false,
+				"aggregation": false,
+				"wordVoc": {
+					"wordVocId": 0,
+					"values": 14
+				},
+				"fields": [
+					{
+						"fieldId": 0
+					}
+				]
+			},
+			{
+				"keyId": 6,
+				"keyName": "ServerTime",
+				"keyText": false,
+				"aggregation": false,
+				"wordVoc": {
+					"wordVocId": 0,
+					"values": 14
+				},
+				"fields": [
+					{
+						"fieldId": 0
+					}
+				]
+			}
+		],
+		"joins": [
+			{
+				"joinId": 0,
+				"joinName": "Page",
+				"joinStoreId": 132,
+				"joinStoreName": "Page2",
+				"joinType": "index"
+			}
+		]
+	},
+	{
+		"storeId": 132,
+		"storeName": "Page2",
+		"storeRecords": 3,
+		"fields": [
+			{
+				"fieldId": 0,
+				"fieldName": "URL",
+				"valueType": "STRING",
+				"featureType": "NONE",
+				"aggregationType": "NONE",
+				"displayType": "TEXT",
+				"keys": [
+					{
+						"keyId": 7
+					},
+					{
+						"keyId": 8
+					},
+					{
+						"keyId": 9
+					}
+				]
+			},
+			{
+				"fieldId": 1,
+				"fieldName": "Title",
+				"valueType": "STRING",
+				"featureType": "NONE",
+				"aggregationType": "NONE",
+				"displayType": "TEXT"
+			},
+			{
+				"fieldId": 2,
+				"fieldName": "Description",
+				"valueType": "STRING",
+				"featureType": "NONE",
+				"aggregationType": "NONE",
+				"displayType": "TEXT"
+			}
+		],
+		"keys": [
+			{
+				"keyId": 7,
+				"keyName": "URL",
+				"keyText": false,
+				"aggregation": false,
+				"wordVoc": {
+					"wordVocId": 0,
+					"values": 14
+				},
+				"fields": [
+					{
+						"fieldId": 0
+					}
+				]
+			},
+			{
+				"keyId": 8,
+				"keyName": "Title",
+				"keyText": false,
+				"aggregation": false,
+				"wordVoc": {
+					"wordVocId": 0,
+					"values": 14
+				},
+				"fields": [
+					{
+						"fieldId": 0
+					}
+				]
+			},
+			{
+				"keyId": 9,
+				"keyName": "Description",
+				"keyText": true,
+				"aggregation": false,
+				"wordVoc": {
+					"wordVocId": 0,
+					"values": 14
+				},
+				"fields": [
+					{
+						"fieldId": 0
+					}
+				]
+			}
+		],
+		"joins": []
+	}
+]
