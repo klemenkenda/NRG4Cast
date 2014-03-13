@@ -8,8 +8,8 @@
 //---------------------------------------------------------------------
 
 // mysql config -------------------------------------------------------
-$mysql_user = "kkenda";
-$mysql_pass = "kkenda2013";
+$mysql_user = "user";
+$mysql_pass = "pass";
 $mysql_host = "localhost";
 $mysql_dbase = "sensorfeed";
 
