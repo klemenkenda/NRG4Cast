@@ -1,34 +1,35 @@
-    [{
-        "node": {
-            "id": "2",
-            "name": "spot-fr", "subjectid": "spot-fr", "lat": 46.19504, "lng": 2.10937,
-            "measurements": [{
-                "sensorid": "4", "value": 2475, "timestamp": "2005-04-22T00:00:00.000",
-                "type": {
-                    "id": "1", "name": "spot-fr-energy-price", "phenomenon": "total-energy",
-                    "UoM": "MWh"
+function constructNetwork(clickedId) {
+    networkData.nodes.clear();
+    networkData.edges.clear();
+
+    for (var i = 0; i < groupsTable.length; i++) {
+        if (groupsTable[i].id == clickedId) {
+            // add nodes
+            for (var j = 0; j < groupsTable[i].states.length; j++) {
+                var titleString = "";
+                titleStr = getTooltipStr(groupsTable[i].states[j]);	//get content for tooltip
+
+                networkData.nodes.add({
+                    id: groupsTable[i].states[j].id, shape: "dot", value:
+                        groupsTable[i].states[j].size,
+                    label: "" + groupsTable[i].states[j].id, title: (titleStr)
+                });
+            }
+
+            //add edges
+            for (var x = 0; x < groupsTable[i].intensities.length; x++) {
+                for (var y = 0; y < groupsTable[i].intensities[x].length; y++) {
+                    if (groupsTable[i].intensities[x][y] > 0) {
+                        var a = groupsTable[i].states[x].id;
+                        var b = groupsTable[i].states[y].id;
+                        networkData.edges.add({
+                            from: a, to: b, value: groupsTable[i].intensities[x][y],
+                            label: "" + groupsTable[i].intensities[x][y].toFixed(2),
+                            title: groupsTable[i].intensities[x][y]
+                        });
+                    }
                 }
-            },
-            {
-                "sensorid": "1", "value": 33.171, "timestamp": "2005-04-22T00:00:00.000",
-                "type": {
-                    "id": "2", "name": "spot-fr-energy-price", "phenomenon": "energy-pricing",
-                    "UoM": "EUR/MWh"
-                }
-            },
-            {
-                "sensorid": "1", "value": 32.054, "timestamp": "2005-04-22T01:00:00.000",
-                "type": {
-                    "id": "2", "name": "spot-fr-energy-price", "phenomenon": "energy-pricing",
-                    "UoM": "EUR/MWh"
-                }
-            },
-            {
-                "sensorid": "4", "value": 2711, "timestamp": "2005-04-22T01:00:00.000",
-                "type": {
-                    "id": "1", "name": "spot-fr-energy-price", "phenomenon": "total-energy",
-                    "UoM": "MWh"
-                }
-            }]
+            }
         }
-    }];
+    }
+}	//end of function
