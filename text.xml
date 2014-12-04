@@ -1,55 +1,46 @@
-<article 4="">
-  <match1>
-    <company>"basic materials\oil & gas drilling & exploration\seadrill limited"</company>
-    <verb>"associated"</verb>
-    <context>"seadrill limited associated companies after the third-quarter 2014 results: 1 - seadrill partners, llc (nyse:sdlp): sdrl owns 39,635,400 shares or 53.2% (majority holder.) 2 - north atlantic drilling (nyse:nadl): sdrl owns 169,663,723 shares or 70.36% (majority holder.) this situation may change in q2 2015 with a potential new partnership with rosneft (otc:rnftf) put on hold by the sanctions of the eu and the usa against russia. "</context>
-  </match1>
+<article 4>
+	<match1>
+		<company>"basic materials\oil & gas drilling & exploration\seadrill limited"</company><verb>"associated"</verb>
+		<context>"seadrill limited associated companies after the third-quarter 2014 results: 1 - seadrill partners, llc (nyse:sdlp): sdrl owns 39,635,400 shares or 53.2% (majority holder.) 2 - north atlantic drilling (nyse:nadl): sdrl owns 169,663,723 shares or 70.36% (majority holder.) this situation may change in q2 2015 with a potential new partnership with rosneft (otc:rnftf) put on hold by the sanctions of the eu and the usa against russia. "</context>
+	</match1>
 </article 4>
-<article 28="">
-  <match1>
-    <company>"basic materials\independent oil & gas\conocophillips"</company>
-    <verb>"claims"</verb>
-    <context>"in papers filed in harris county court in texas, conocophillips claims that "pdvsa seeks to liquidate and repatriate assets out of the current jurisdictions and to venezuela or elsewhere to hinder collection on the claims against it because venezuela will not recognize the arbitration awards or judgments recognizing or confirming them." e-mail start a free trial bankers representing venezuela have set a date for late december for prospective buyers to submit revised offers for citgo, according to a reuters report. "</context>
-  </match1>
+<article 28>
+	<match1>
+		<company>"basic materials\independent oil & gas\conocophillips"</company><verb>"claims"</verb>
+		<context>"in papers filed in harris county court in texas, conocophillips claims that "pdvsa seeks to liquidate and repatriate assets out of the current jurisdictions and to venezuela or elsewhere to hinder collection on the claims against it because venezuela will not recognize the arbitration awards or judgments recognizing or confirming them." e-mail start a free trial bankers representing venezuela have set a date for late december for prospective buyers to submit revised offers for citgo, according to a reuters report. "</context>
+	</match1>
 </article 28>
-<article 37="">
-  <match1>
-    <company>"financial\investment brokerage - national\morgan stanley"</company>
-    <verb>"predicts"</verb>
-    <context>"morgan stanley predicts apple will sell 30 million units. "</context>
-  </match1>
+<article 37>
+	<match1>
+		<company>"financial\investment brokerage - national\morgan stanley"</company><verb>"predicts"</verb>
+		<context>"morgan stanley predicts apple will sell 30 million units. "</context>
+	</match1>
 </article 37>
-<article 57="">
-  <match1>
-    <company>"basic materials\copper\freeport-mcmoran"</company>
-    <verb>"copper"</verb>
-    <context>"sector % total country % total analysis assets analysis assets integrated oil 34.2 global 33.1 diversified 18.7 usa 20.3 exploration & production 15.1 canada 18.8 copper 7.5 europe 11.1 oil sands 4.7 latin america 6.5 nickel 4.6 asia 4.4 distribution 3.6 china 2.2 oil services 3.5 africa 2.0 gold 2.4 australia 2.0 coal 2.2 current liabilities (0.4) iron ore 1.4 ----- silver 1.3 100.0 diamonds 0.5 ===== platinum 0.4 fertilizers 0.3 current liabilities (0.4) ----- 100.0 ===== ten largest equity investments % total company region of risk assets chevron global 6.9 exxonmobil global 6.0 bhp billiton global 5.5 rio tinto global 3.8 royal dutch shell global 3.6 eni europe 3.6 enbridge income canada 3.6 freeport-mcmoran copper & gold asia 3.5 conocophillips usa 3.3 glencore global 3.2 commenting on the markets, olivia markham and tom holl, representing the investment manager noted: both the energy and mining sectors came under significant downward pressure during the month as commodity prices, particularly on the energy side, fell sharply. "</context>
-  </match1>
+<article 57>
+	<match1>
+		<company>"basic materials\copper\freeport-mcmoran"</company><verb>"copper"</verb>
+		<context>"sector % total country % total analysis assets analysis assets integrated oil 34.2 global 33.1 diversified 18.7 usa 20.3 exploration & production 15.1 canada 18.8 copper 7.5 europe 11.1 oil sands 4.7 latin america 6.5 nickel 4.6 asia 4.4 distribution 3.6 china 2.2 oil services 3.5 africa 2.0 gold 2.4 australia 2.0 coal 2.2 current liabilities (0.4) iron ore 1.4 ----- silver 1.3 100.0 diamonds 0.5 ===== platinum 0.4 fertilizers 0.3 current liabilities (0.4) ----- 100.0 ===== ten largest equity investments % total company region of risk assets chevron global 6.9 exxonmobil global 6.0 bhp billiton global 5.5 rio tinto global 3.8 royal dutch shell global 3.6 eni europe 3.6 enbridge income canada 3.6 freeport-mcmoran copper & gold asia 3.5 conocophillips usa 3.3 glencore global 3.2 commenting on the markets, olivia markham and tom holl, representing the investment manager noted: both the energy and mining sectors came under significant downward pressure during the month as commodity prices, particularly on the energy side, fell sharply. "</context>
+	</match1>
 </article 57>
-<article 68="">
-  <match1>
-    <company>"basic materials\oil & gas drilling & exploration\seadrill limited"</company>
-    <verb>"reports"</verb>
-    <context>"the seadrill group* on a consolidated basis reports ebitda of us$842 million, a year over year increase of 27% seadrill limited reports third quarter 2014 ebitda* of us$635 million seadrill limited reports third quarter 2014 net income of us$190 million and earnings per share of us$0.31 the seadrill group on a consolidated basis maintains orderbacklog of approximately us$20 billion seadrill limited is suspending dividend distributions and focusing on debt reduction and value creating opportunities due to significant deterioration in the broader markets seadrill receives a commitment for a us$1.35 billion credit facility to refinance the credit facilities secured by the west pegasus, west gemini, and west orion. "</context>
-  </match1>
+<article 68>
+	<match1>
+		<company>"basic materials\oil & gas drilling & exploration\seadrill limited"</company><verb>"reports"</verb>
+		<context>"the seadrill group* on a consolidated basis reports ebitda of us$842 million, a year over year increase of 27% seadrill limited reports third quarter 2014 ebitda* of us$635 million seadrill limited reports third quarter 2014 net income of us$190 million and earnings per share of us$0.31 the seadrill group on a consolidated basis maintains orderbacklog of approximately us$20 billion seadrill limited is suspending dividend distributions and focusing on debt reduction and value creating opportunities due to significant deterioration in the broader markets seadrill receives a commitment for a us$1.35 billion credit facility to refinance the credit facilities secured by the west pegasus, west gemini, and west orion. "</context>
+	</match1>
 </article 68>
-<article 81="">
-  <match1>
-    <company>"services\jewelry stores\tiffany & co"</company>
-    <verb>"rose"</verb>
-    <context>"tiffany & co rose 2.5 per cent to us$107.60 after same-store sales growth beat expectations. "</context>
-  </match1>
+<article 81>
+	<match1>
+		<company>"services\jewelry stores\tiffany & co"</company><verb>"rose"</verb>
+		<context>"tiffany & co rose 2.5 per cent to us$107.60 after same-store sales growth beat expectations. "</context>
+	</match1>
 </article 81>
-<article 131="">
-  <match1>
-    <company>"basic materials\independent oil & gas\exxon mobil corp"</company>
-    <verb>"fell"</verb>
-    <context>"exxon mobil corp fell 1.2 percent to $94.61 while chevron corp was off 1.5 percent to $115.87. "</context>
-  </match1>
-  <match2>
-    <company>"basic materials\major integrated oil & gas\chevron corp"</company>
-    <verb>"was"</verb>
-    <context>"exxon mobil corp fell 1.2 percent to $94.61 while chevron corp was off 1.5 percent to $115.87. "</context>
-  </match2>
+<article 131>
+	<match1>
+		<company>"basic materials\independent oil & gas\exxon mobil corp"</company><verb>"fell"</verb>
+		<context>"exxon mobil corp fell 1.2 percent to $94.61 while chevron corp was off 1.5 percent to $115.87. "</context>
+	</match1>
+	<match2>
+		<company>"basic materials\major integrated oil & gas\chevron corp"</company><verb>"was"</verb>
+		<context>"exxon mobil corp fell 1.2 percent to $94.61 while chevron corp was off 1.5 percent to $115.87. "</context>
+	</match2>
 </article 131>
-
