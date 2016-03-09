@@ -1,0 +1,2 @@
+python parselocal.py
+pause

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>jsTree</title>
+	<meta name="viewport" content="width=device-width" />
+	<!--[if lt IE 9]><script src="./assets/html5.js"></script><![endif]-->
+	
+	<meta name="robots" content="index,follow" />
+	<link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./assets/dist/themes/default/style.min.css" />
+	<link rel="stylesheet" href="./assets/docs.css" />
+	<!--[if lt IE 9]><script src="./assets/respond.js"></script><![endif]-->
+	
+	<link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon-precomposed" href="./assets/apple-touch-icon-precomposed.png" />
+	<script>window.$q=[];window.$=window.jQuery=function(a){window.$q.push(a);};</script>
+</head>
+<body>
+<div id="jstree_demo" class="demo" style="margin-top:1em; min-height:200px;"></div>
+
+						<script>
+						function demo_create() {
+							var ref = $('#jstree_demo').jstree(true),
+								sel = ref.get_selected();
+							if(!sel.length) { return false; }
+							sel = sel[0];
+							sel = ref.create_node(sel, {"type":"file"});
+							if(sel) {
+								ref.edit(sel);
+							}
+						};
+						function demo_rename() {
+							var ref = $('#jstree_demo').jstree(true),
+								sel = ref.get_selected();
+							if(!sel.length) { return false; }
+							sel = sel[0];
+							ref.edit(sel);
+						};
+						function demo_delete() {
+							var ref = $('#jstree_demo').jstree(true),
+								sel = ref.get_selected();
+							if(!sel.length) { return false; }
+							ref.delete_node(sel);
+						};
+						$(function () {
+							var to = false;
+							$('#demo_q').keyup(function () {
+								if(to) { clearTimeout(to); }
+								to = setTimeout(function () {
+									var v = $('#demo_q').val();
+									$('#jstree_demo').jstree(true).search(v);
+								}, 250);
+							});
+
+							$('#jstree_demo')
+								.jstree({
+									"core" : {
+										"animation" : 1,
+										"check_callback" : true,
+										"themes" : { "stripes" : true },
+										'data' : {
+											'url' : function (node) {
+												return node.id === '#' ? './assets/ajax_demo_roots.json' : './assets/ajax_demo_children.json';
+											},
+											'data' : function (node) {
+												return { 'id' : node.id };
+											}
+										}
+									},
+									"types" : {
+										"#" : { "max_children" : 10, "max_depth" : 8, "valid_children" : ["root", "file", "default"] },
+										"root" : { "icon" : "./assets/images/tree_icon.png", "valid_children" : ["default","root","file"] },
+										"default" : { "valid_children" : ["default","file","root"] },
+										"file" : { "icon" : "glyphicon glyphicon-file", "valid_children" : ["default", "root", "file"] }
+									},
+									"plugins" : [ "contextmenu", "dnd", "state", "types", "wholerow" ]
+								});
+						});
+						</script>
+					</div>
+
+
+</body>
+</html>
